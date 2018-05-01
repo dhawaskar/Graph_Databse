@@ -1,0 +1,12 @@
+#How to run?
+Go to main directory and do make clean all
+change the directory /src/cli
+run ./db
+########### to get the neighbour
+g nei 0 0 1
+i.e g nei <gno> <cno> <node_num>
+
+########## to check for strong path
+g str <gno> <cno> <node1> <node2>
+########## to check for weak path
+same as strong path above

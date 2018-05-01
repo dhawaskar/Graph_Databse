@@ -1,0 +1,36 @@
+cd src/cli;make
+make[1]: Entering directory '/home/sandesh/dbms/grdb/src/cli'
+cd ../db; make;
+make[2]: Entering directory '/home/sandesh/dbms/grdb/src/db'
+gcc -c -Wall -Og -g  -I../../include -o component_neighbours.o component_neighbours.c
+component_neighbours.c: In function ‘component_neighbours’:
+component_neighbours.c:23:7: error: ‘*c’ is a pointer; did you mean to use ‘->’?
+  if (c->se == NULL)
+       ^~
+       ->
+component_neighbours.c:26:23: error: ‘*c’ is a pointer; did you mean to use ‘->’?
+   size = schema_size(c->se);
+                       ^~
+                       ->
+component_neighbours.c:34:10: error: ‘*c’ is a pointer; did you mean to use ‘->’?
+   lseek(c->efd, off, SEEK_SET);
+          ^~
+          ->
+component_neighbours.c:35:15: error: ‘*c’ is a pointer; did you mean to use ‘->’?
+   len = read(c->efd, buf, readlen);
+               ^~
+               ->
+component_neighbours.c:16:15: warning: unused variable ‘tuple’ [-Wunused-variable]
+  struct tuple tuple;
+               ^~~~~
+component_neighbours.c:15:13: warning: unused variable ‘id’ [-Wunused-variable]
+  vertexid_t id, id1, id2;
+             ^~
+../Makefile.rules:10: recipe for target 'component_neighbours.o' failed
+make[2]: *** [component_neighbours.o] Error 1
+make[2]: Leaving directory '/home/sandesh/dbms/grdb/src/db'
+Makefile:29: recipe for target 'all' failed
+make[1]: *** [all] Error 2
+make[1]: Leaving directory '/home/sandesh/dbms/grdb/src/cli'
+Makefile:2: recipe for target 'all' failed
+make: *** [all] Error 2
